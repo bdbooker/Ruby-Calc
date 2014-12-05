@@ -1,0 +1,93 @@
+#Ruby Brad Booker
+#Calculator scope
+
+puts " Would you like to start calculating? (yes or no)" # used in while loop to make the program rerun itself
+continue = gets.chomp
+
+
+
+def Subtraction(a,b)  #functions as asked by scope
+	c = Integer(a) - Integer(b)
+	puts "The difference is " + c.to_s
+	end
+def Divide(a,b)
+	c = Float(a) / Float(b)
+	puts "The quotient is " + c.to_s
+	end	
+def Multiplication(a,b)
+	c = Integer(a) * Integer(b)
+	puts "The product is " + c.to_s
+	end
+def SquareRoot(a)
+	c = Math.sqrt(a)
+	puts "The square root values are " + c.to_s 
+	end 
+def Cosign(a)
+	c = Math.cos(a)
+	puts "The cosign of " + a.to_s + " is " + c.to_s 
+	end 
+def Sine(a)
+	c = Math.sin(a)
+	puts "The square root values are " + c.to_s 
+	end 
+def Tangent(a)
+	c = Math.tan(a)
+	puts "The square root values are " + c.to_s 
+	end 
+
+while continue == 'yes' do #while loop that causes the program to keep looping until the user inputs 0
+puts "What calculation do you want? 0=Stop, 1=Add, 2=Subtract, 3=Divide, 4=Multiply "
+puts "5=Square root, 6=Cosign, 7=Sine, 8=Tangent"
+calc = gets
+	if Integer(calc) ==0 #input that will close the program
+		puts "Goodbye"
+		continue = 'no'
+	elsif Integer(calc) ==1 #the add function takes in as many numbers as the user wants
+		print "How many number will you add "
+		numb = gets
+		print "What is the first number "
+		a = gets
+		i=0
+		while i < Integer(numb) do # keeps asking for numbers until the users self imposed limit
+			print "What is the next number?"
+			b = gets
+			a = Integer(a) + Integer(b)
+			puts "The current sum is " + a.to_s #shows the current sum
+			i +=1
+		end
+	elsif Integer(calc) ==2 #asks for the numbers and calls the functions
+		print "Enter First number "
+		a = gets
+		print "Enter Second number "
+		b = gets
+		puts Subtraction(a,b)	
+	elsif Integer(calc) ==3
+		print "Enter First number "
+		a = gets
+		print "Enter Second number "
+		b = gets
+		puts Divide(a,b)
+	elsif Integer(calc) ==4
+		print "Enter First number "
+		a = gets
+		print "Enter Second number "
+		b = gets
+		puts Multiplication(a,b)
+	elsif Integer(calc) ==5
+		print "Enter the number to be rooted "
+		a = gets
+		puts SquareRoot(a)
+	elsif Integer(calc) ==6
+		print "Enter the number you want to cosign " 
+		a = gets
+		puts Cosign(a)
+	elsif Integer(calc) ==7
+		print "Enter the number you want to sine " 
+		a = gets
+		puts Sine(a)
+	elsif Integer(calc) ==8
+		print "Enter the number you want to tangent " 
+		a = gets
+		puts Tangent(a)
+	end
+end
